@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Hack:wght@400;700&display=swap');
+
+
+/* ------------------ Variables ------------------ */
+
+:root {
+  --spacing: 24px;
+  --card-padding: 20px;
+  --max-width: 1450px;
+}
+
+
+/* ------------------ Global ------------------ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hack", monospace;
+  background-color: #2d2d2d;
+
+  display: flex;
+  justify-content: center;
+  color: #FF6B9D;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: var(--spacing);
+}
+
+
+/* ------------------ Links ------------------ */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+
+/* ------------------ Navigation ------------------ */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #191514;
+  padding: var(--spacing);
+
+  border: 2px solid #FFEAD8;
+  border-radius: 8px;
+
+  margin-bottom: var(--spacing);
+}
+
+.nav-name a {
+  color: #FF6B9D;
+}
+
+.nav-projects a {
+  color: #FFA949;
+}
+
+.nav-github a {
+  color: #FFE66D;
+}
+
+.nav-linkedin a {
+  color: #95E77D;
+}
+
+.nav-contact a {
+  color: #6DD5ED;
+}
+
+
+/* ------------------ Header ------------------ */
+
+header {
+  margin-bottom: var(--spacing);
+}
+
+.header-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing);
+
+  align-items: stretch;
+}
+
+
+/* ------------------ Cards ------------------ */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  align-items: center;
+  text-align: center;
+
+  padding: var(--card-padding);
+
+  background-color: #191514;
+  border: 2px solid #FFEAD8;
+  border-radius: 8px;
+
+  height: 100%;
+}
+
+.card h2,
+.card h3 {
+  margin-bottom: 15px;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+/* Profile Image */
+
+.profile-img {
+  width: 120px;
+  height: 180px;
+
+  object-fit: cover;
+  border-radius: 6px;
+
+  margin: 15px 0;
+}
+
+
+/* Tagline */
+
+.tagline {
+  margin-top: 10px;
+}
+
+
+/* ------------------ Experience Section ------------------ */
+
+.experience-section {
+  margin-bottom: var(--spacing);
+}
+
+.experience-education-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing);
+
+  margin-bottom: var(--spacing);
+
+  align-items: stretch;
+}
+
+
+/* ------------------ Forms ------------------ */
+
+.contact-form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+.contact-form label {
+  font-weight: 600;
+  text-align: left;
+}
+
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+
+  padding: 10px 12px;
+
+  background-color: #2d2d2d;
+  color: #FF6B9D;
+
+  border: 1px solid #FFEAD8;
+  border-radius: 5px;
+
+  font-family: inherit;
+}
+
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form button {
+  margin-top: 10px;
+
+  padding: 12px;
+
+  background-color: #FF6B9D;
+  color: #191514;
+
+  border: none;
+  border-radius: 6px;
+
+  font-weight: 600;
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+
+.contact-form button:hover {
+  background-color: #ff85b2;
+  transform: translateY(-1px);
+}
+
+/* ------------------ Contact Page ------------------ */
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+
+  margin: calc(var(--spacing) * 2) 0;
+}
+
+.contact-card {
+  width: 100%;
+  max-width: 1000px;
+
+  padding: 30px;
+}
+
+footer {
+  text-align: center;
+
+  margin-top: var(--spacing);
+  padding-bottom: var(--spacing);
+
+  opacity: 0.8;
+}
+
+/* ------------------ Projects Page ------------------ */
+
+.projects-section {
+  margin-bottom: var(--spacing);
+}
+
+.projects-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--spacing);
+}
+
+.project-card p {
+  margin-bottom: 15px;
+}
+
+.project-card a {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .projects-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ------------------ Responsive ------------------ */
+
+@media (max-width: 768px) {
+
+  .header-cards,
+  .experience-education-cards {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+}
