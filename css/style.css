@@ -9,12 +9,13 @@
   --max-width: 1450px;
 
   --text-primary: #FFEAD8;
-  --text-secondary: #e6d7ff;
-  --text-muted: #b8a9d9;
+  --text-secondary: #f1e6ff;
+  --text-muted: #cbbcf0;
 
-  --accent-pink: #FF6B9D;
-  --accent-orange: #FFA949;
-  --accent-blue: #6DD5ED;
+  /* Updated accent palette */
+  --accent-purple: #A855F7;
+  --accent-deep-purple: #6D28D9;
+  --accent-orange: #FF9A3C;
 }
 
 
@@ -48,18 +49,19 @@ body::before {
   position: fixed;
   inset: 0;
 
+  /* Purple → dark overlay tint */
   background:
     linear-gradient(
       to bottom,
-      rgba(20,10,40,0.65),
-      rgba(0,0,0,0.75)
+      rgba(55, 20, 95, 0.65),
+      rgba(0, 0, 0, 0.75)
     );
 
   z-index: -1;
 }
 
 ::selection {
-  background: var(--accent-pink);
+  background: var(--accent-purple);
   color: #191514;
 }
 
@@ -96,10 +98,12 @@ nav {
   border: 2px solid transparent;
   background:
     linear-gradient(#191514, #191514) padding-box,
-    linear-gradient(135deg,
-      var(--accent-pink),
-      var(--accent-orange),
-      var(--accent-blue)) border-box;
+    linear-gradient(
+      135deg,
+      var(--accent-deep-purple),
+      var(--accent-purple),
+      var(--accent-orange)
+    ) border-box;
 
   margin-bottom: var(--spacing);
 }
@@ -114,11 +118,12 @@ nav a:hover {
   text-shadow: 0 0 8px currentColor;
 }
 
-.nav-name a { color: var(--accent-pink); }
+/* Updated link colors */
+.nav-name a { color: var(--accent-purple); }
 .nav-projects a { color: var(--accent-orange); }
-.nav-github a { color: #FFE66D; }
-.nav-linkedin a { color: #95E77D; }
-.nav-contact a { color: var(--accent-blue); }
+.nav-github a { color: #FFD08A; }
+.nav-linkedin a { color: #C084FC; }
+.nav-contact a { color: #FDBA74; }
 
 
 /* ------------------ Header ------------------ */
@@ -151,10 +156,12 @@ header {
       rgba(25,21,20,0.85),
       rgba(25,21,20,0.85)
     ) padding-box,
-    linear-gradient(135deg,
-      var(--accent-pink),
-      var(--accent-orange),
-      var(--accent-blue)) border-box;
+    linear-gradient(
+      135deg,
+      var(--accent-deep-purple),
+      var(--accent-purple),
+      var(--accent-orange)
+    ) border-box;
 
   backdrop-filter: blur(10px);
 
@@ -215,10 +222,12 @@ header {
   border: 2px solid transparent;
   background:
     linear-gradient(#191514, #191514) padding-box,
-    linear-gradient(135deg,
-      var(--accent-pink),
-      var(--accent-orange),
-      var(--accent-blue)) border-box;
+    linear-gradient(
+      135deg,
+      var(--accent-deep-purple),
+      var(--accent-purple),
+      var(--accent-orange)
+    ) border-box;
 }
 
 
@@ -238,7 +247,7 @@ header {
   padding: 4px 8px;
   border-radius: 6px;
 
-  background: rgba(255,255,255,0.05);
+  background: rgba(168, 85, 247, 0.08);
   border: 1px solid rgba(255,255,255,0.08);
 
   font-size: 0.9rem;
@@ -254,15 +263,13 @@ header {
   text-align: left;
 }
 
-
 .experience-entry h4,
 .education-entry h4,
 .other-experience-entry h4 {
   margin: 0 0 4px 0;
   font-size: 0.95rem;
-  color: var(--accent-pink);
+  color: var(--accent-purple);
 }
-
 
 .experience-entry p,
 .education-entry p,
@@ -273,7 +280,6 @@ header {
   font-style: italic;
 }
 
-
 .experience-entry ul,
 .education-entry ul {
   margin: 0;
@@ -283,7 +289,6 @@ header {
   flex-direction: column;
   gap: 6px;
 }
-
 
 .experience-entry ul li,
 .education-entry ul li {
@@ -308,22 +313,11 @@ header {
 
 /* ------------------ Interests ------------------ */
 
-.interests-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-
 .interests-card li {
   padding: 4px 8px;
   border-radius: 6px;
 
-  background: rgba(255,255,255,0.05);
+  background: rgba(168, 85, 247, 0.08);
   border: 1px solid rgba(255,255,255,0.08);
 
   font-size: 0.9rem;
@@ -332,44 +326,47 @@ header {
 
 /* ------------------ Forms ------------------ */
 
-.contact-form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.contact-form { 
+  width: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 16px; 
 }
 
-.contact-form label {
-  font-weight: 600;
-  text-align: left;
+.contact-form label { 
+  font-weight: 600; 
+  text-align: left; 
 }
 
 .contact-form input,
 .contact-form textarea {
+  padding: 16px, 18px;
   width: 100%;
-  padding: 10px 12px;
-
-  background-color: #2d2d2d;
-  color: var(--text-primary);
-
-  border: 1px solid rgba(255,255,255,0.2);
   border-radius: 5px;
-
-  font-family: inherit;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(25,21,20,0.8);
+  color: var(--text-primary);
+  font-size: 1.05rem;
 }
 
-.contact-form textarea {
-  min-height: 120px;
-  resize: vertical;
+.contact-form textarea { 
+  min-height: 120px; 
+  resize: vertical; 
 }
+
+
 
 .contact-form button {
   margin-top: 10px;
   padding: 12px;
 
-  background-color: var(--accent-orange);
-  color: #191514;
+  background: linear-gradient(
+    135deg,
+    var(--accent-purple),
+    var(--accent-orange)
+  );
 
+  color: #191514;
   border: none;
   border-radius: 6px;
 
@@ -381,7 +378,7 @@ header {
 }
 
 .contact-form button:hover {
-  background-color: #fac941;
+  filter: brightness(1.1);
   transform: translateY(-1px);
 }
 
